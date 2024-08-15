@@ -636,6 +636,27 @@ Samba = [
         local_window = 512,
         mamba_init = True,
     ),
+    # Custom toy model
+    dict(
+        org="Microsoft",
+        name="Samba_270M", 
+        block_size=4096,
+        vocab_size=128256,
+        padding_multiple=64,
+        mb_per_layer = 2,
+        n_layer=8,
+        n_head=8,
+        n_embd=1024,
+        rotary_percentage=1.0,
+        parallel_residual=False,
+        bias=False,
+        _norm_class="FusedRMSNorm",
+        norm_eps=1e-5,
+        _mlp_class="LLaMAMLP",
+        intermediate_size=4096,
+        local_window = 2048,
+        mamba_init = True,
+    ),
     ###############  1.3B   ###############  
     dict(
         org="Microsoft",
